@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('bangladesh-flag-ruffled-beautifully-waving-macro-close-up-shot.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Amra Korbo Joy </h1>
+        <button onclick="sendEmail()">Send Email</button>
+    </div>
+    <script>
+        function sendEmail() {
+            // List of email addresses
+            const emailAddresses = [
+                "48hours@cbsnews.com",
+                "60m@cbsnews.com",
+                "america@aljazeera.net",
+                "ajam.press@aljazeera.net",
+                "info@ap.org",
+                "bbcworld@bbc.co.uk",
+                "evening@cbsnews.com"
+            ];
+
+            // Subject and body of the email
+            const subject = encodeURIComponent("BANGLADESH NEEDS YOUR ATTENTION!!!");
+            const body = encodeURIComponent(`Hello,
+
+I, on behalf of Bangladeshi students, want to keep you an eye on Bangladesh. We are killed by our ruling govt. party because of our quota movements for our rights. After killing a lot of students, our PM is trying to go to your country as well as some other countries and escaping her responsibility. No media, channels and newspaper is helping us to show the real truth because of our govt. order. Also the service holder like police are firing against the students and people as they are ordered to do that by our merciless govt. We want you to see the news and scenes in social media like facebook, X and spread the news of Bangladesh everywhere. Already a lot of international news community helped us to do it. We want you to not accept her in your country. Please help us to get our right. Here are some prove for you about the movements going on in Bangladesh.
+
+Sincerely,
+
+Name
+
+On behalf of the students of Bangladesh`);
+
+            // Create mailto link
+            const mailtoLink = `mailto:${emailAddresses.join(",")}?subject=${subject}&body=${body}`;
+
+            // Open default email client with pre-filled email addresses
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
